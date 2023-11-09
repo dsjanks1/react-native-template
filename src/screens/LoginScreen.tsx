@@ -1,8 +1,9 @@
 // screens/LoginScreen.tsx
 import * as React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, TextInput, TouchableOpacity, Image} from 'react-native';
 import styles from '../styles/LoginScreenStyles';
 import {LoginScreenNavigationProp} from '../types/navigationProps';
+import InputBoxComponent from '../components/InputBoxComponent';
 
 // Define the props for the component, including the navigation prop
 type Props = {
@@ -12,8 +13,32 @@ type Props = {
 const LoginScreen: React.FC<Props> = ({}) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Login to your account</Text>
-      {/* Add your login form here */}
+      <View style={styles.logoContainer}>
+        {/* Replace with your app logo and name */}
+        <Text style={styles.appName}>Your App Name</Text>
+        <Image
+          style={styles.imageLogo}
+          source={require('../assets/golden.png')}
+        />
+      </View>
+      <View style={styles.formContainer}>
+        <InputBoxComponent placeholder="Username" secureTextEntry={false} />
+        <InputBoxComponent placeholder="Password" isSignUpPassword={false} />
+        {/* <TextInput
+          placeholder="Password"
+          secureTextEntry
+          style={styles.input}
+          // onChangeText, value, and other props go here
+        /> */}
+        <View>
+          <TouchableOpacity style={styles.mrb10}>
+            <Text style={styles.registerText}>Register</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.signInButton}>
+            <Text style={styles.signInButtonText}>Sign In</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
     </View>
   );
 };

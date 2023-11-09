@@ -1,17 +1,24 @@
 // styles/SplashScreenStyles.ts
-import {StyleSheet} from 'react-native';
+import {StyleSheet, Dimensions} from 'react-native';
+
+const {width, height} = Dimensions.get('window'); // Get the full width and height of the screen
 
 export default StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#FFF', // Replace with your desired background color
+    justifyContent: 'center', // Center the content vertically
+    alignItems: 'center', // Center the content horizontally
+    width: width, // Set the width to the full screen
+    height: height, // Set the height to the full screen
+    backgroundColor: '#fff', // Optional: Set a background color in case the animation has transparency
+  },
+  animation: {
+    width: width, // Set the width to the full screen
+    height: height, // Set the height to the full screen
   },
   text: {
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: 'bold',
-    // Add more styling as needed
+    color: '#000', // Set the text color; choose a color that matches your app's theme
   },
-  // Add more style objects as needed
 });

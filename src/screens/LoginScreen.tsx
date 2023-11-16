@@ -1,6 +1,6 @@
 // screens/LoginScreen.tsx
 import * as React from 'react';
-import {View, Text, TextInput, TouchableOpacity, Image} from 'react-native';
+import {View, Text, TouchableOpacity, Image} from 'react-native';
 import styles from '../styles/LoginScreenStyles';
 import {LoginScreenNavigationProp} from '../types/navigationProps';
 import InputBoxComponent from '../components/InputBoxComponent';
@@ -10,7 +10,7 @@ type Props = {
   navigation: LoginScreenNavigationProp;
 };
 
-const LoginScreen: React.FC<Props> = ({}) => {
+const LoginScreen: React.FC<Props> = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={styles.logoContainer}>
@@ -31,7 +31,9 @@ const LoginScreen: React.FC<Props> = ({}) => {
           // onChangeText, value, and other props go here
         /> */}
         <View>
-          <TouchableOpacity style={styles.mrb10}>
+          <TouchableOpacity
+            style={styles.mrb10}
+            onPress={() => navigation.navigate('Register')}>
             <Text style={styles.registerText}>Register</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.signInButton}>

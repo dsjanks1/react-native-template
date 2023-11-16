@@ -13,10 +13,10 @@ const SplashScreen: React.FC<Props> = ({navigation}) => {
   let animation = React.useRef(null);
 
   // React.useEffect(() => {
-    // // This assumes the animation is the correct length of time before navigating
-    // const timer = setTimeout(() => {
-    //   navigation.navigate('Login');
-    // }, 3000); // Adjust time based on your animation
+  // // This assumes the animation is the correct length of time before navigating
+  // const timer = setTimeout(() => {
+  //   navigation.navigate('Login');
+  // }, 3000); // Adjust time based on your animation
 
   //   return () => clearTimeout(timer); // Clear the timer when unmounting
   // }, [navigation]);
